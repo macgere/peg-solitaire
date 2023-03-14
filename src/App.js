@@ -3,10 +3,9 @@ import './App.css';
 import { useState } from 'react';
 
 function App() {
-  const [position, setPosition] = useState([][0])
 
-  const handleClick = (event) => {
-      setPosition(event.currentTarget.index)
+  const handleClick = () => {
+
   };
 
 
@@ -19,7 +18,7 @@ function App() {
       <div className='row'>
         {boardRow1.map((x) => {
           if (x == 1)
-            return <button key={x.id} className='peg' onClick={handleClick(index)}>x</button>
+            return <button key={x.id} className='peg' onClick={handleClick()}>x</button>
           if (x == 0)
             return <div className='space'>O</div>
         })}
@@ -27,7 +26,7 @@ function App() {
         <div className='row'>
           {boardRow2.map((x) => {
             if (x == 1)
-              return <button key={x.id} className='peg' onClick={handleClick(index)}>x</button>
+              return <button key={x.id} className='peg' onClick={handleClick()}>x</button>
             if (x == 0)
               return <div className='space'>O</div>
           })}
@@ -35,7 +34,7 @@ function App() {
         <div className='row'>
         {boardRow3.map((x) => {
           if (x == 1) 
-            return <button key={x.id} className='peg' onClick={handleClick(index)}>x</button>
+            return <button key={x.id} className='peg' onClick={handleClick()}>x</button>
           if (x == 0) 
             return <div className='space'>O</div>
         })}

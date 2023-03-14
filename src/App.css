@@ -17,9 +17,30 @@
   padding: 3px;
 }
 
+.peg:hover {
+  font-size: large;
+  background-color: rgb(178, 245, 222);
+  margin: 5px;
+  padding: 3px;
+}
+
+.peg:focus {
+  font-size: large;
+  background-color: salmon;
+  margin: 5px;
+  padding: 3px;
+}
+
 .space {
   font-size: large;
   background-color: rgb(10, 24, 19);
+  margin: 5px;
+  padding: 3px;
+}
+
+.space:hover {
+  font-size: large;
+  background-color: rgb(73, 82, 79);
   margin: 5px;
   padding: 3px;
 }
