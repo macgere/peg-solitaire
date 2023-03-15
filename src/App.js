@@ -16,63 +16,24 @@ function App() {
   }, [target])
 
 
-  const boardRow0 = [1,2,3]
-  const boardRow1 = [1,2,3,4,5,6,7]
-  const boardRow2 = [1,2,3,0,5,6,7]
-  const boardRow3 = [1,2,3,4,5,6,7]
-  const boardRow4 = [1,2,3]
+  const boardRow0 = [0,0,1,1,1,0,0]
+  const boardRow1 = [1,1,1,1,1,1,1]
+  const boardRow2 = [1,1,1,0,1,1,1]
+  const boardRow3 = [1,1,1,1,1,1,1]
+  const boardRow4 = [0,0,1,1,1,0,0]
   const board = [boardRow0, boardRow1, boardRow2, boardRow3, boardRow4]
 
 
   return (
     <div className="App">
-            {/* <div className='row'>
-        {boardRow0.map((x) => {
-          if (x !== 0)
-            return <button key={x} className='peg' onClick={() => handleClick(x)}>x</button>
-          if (x == 0)
-            return <div key={x} className='space'>O</div>
-        })}
-        </div>
-      <div className='row'>
-        {boardRow1.map((x) => {
-          if (x !== 0)
-            return <button key={x} className='peg' onClick={() => handleClick(x)}>x</button>
-          if (x == 0)
-            return <div className='space'>O</div>
-        })}
-        </div>
-        <div className='row'>
-          {boardRow2.map((x) => {
-            if (x !== 0)
-              return <button key={x} className='peg' onClick={() => handleClick(x)}>x</button>
-            if (x == 0)
-              return <div className='space'>O</div>
-          })}
-        </div>
-        <div className='row'>
-        {boardRow3.map((x) => {
-          if (x !== 0) 
-            return <button key={x} className='peg' onClick={() => handleClick(x)}>x</button>
-          if (x == 0) 
-            return <div className='space'>O</div>
-        })}
-      </div>
-      <div className='row'>
-        {boardRow4.map((x) => {
-          if (x !== 0)
-            return <button key={x} className='peg' onClick={() => handleClick(x)}>x</button>
-          if (x == 0)
-            return <div className='space'>O</div>
-        })}
-        </div> */}
         <div>
-        {board.map((x) => {
-          return x.map((y) => {
+        {board.map((x, rowX) => {
+          let row = rowX.toString()
+          return x.map((y, position) => {
+            let column = position.toString()
             if (y !== 0)
-              return <button key={y} className='peg' onClick={() => handleClick(y)}>x</button>
-            if (y == 0)
-              return <div className='space'>O</div>
+              return <button key={row + column} className='peg' onClick={() => handleClick((row + column).toString())}>x</button>
+            else return <div className='space'>'  '</div>
           })
         })}
         </div>
